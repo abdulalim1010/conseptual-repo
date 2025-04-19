@@ -5,9 +5,10 @@ import { FaBookOpenReader } from "react-icons/fa6";
 
 
 
+
 const Navbar = () => {
   return (
-    <div className="navbar bg-base-100 shadow-sm">
+    <div className="navbar bg-base-100 shadow-sm max-w-screen-2xl mx-auto">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn cursor-pointer mr-2 lg:hidden">
@@ -15,16 +16,18 @@ const Navbar = () => {
       </div>
       <ul
         tabIndex={0}
-        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-        <li><Link>Home</Link></li>
-        <li>
-          <Link>About</Link>
+            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+              <ul className="menu menu-horizontal px-1">
+          <li><NavLink className={({ isActive }) => (isActive ? 'text-white bg-amber-800' : '')} to='/'>Home</NavLink></li>
+          
+      <li>
+       <NavLink className={({isActive})=>(isActive?'text-white bg-yellow-300':'')} to='/about'>About</NavLink>
+      </li>
+      <li><NavLink className={({isActive})=>(isActive?'text-white bg-blue-600':'')} to='/cart'><FaShoppingCart size={20} />
+</NavLink></li>
+      <li><NavLink className={({isActive})=>(isActive?'text-white bg-green-500':'')} to='/favorite'><FaBookOpenReader /> </NavLink></li>
+    </ul> 
         
-            </li>
-            <li>
-
-            </li>
-        <li><a>Item 3</a></li>
       </ul>
     </div>
     <Link to='/' className="btn btn-ghost text-xl">Amar time notsto</Link>
@@ -34,7 +37,8 @@ const Navbar = () => {
   </div>
       <div className="navbar-end  hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
-      <li><NavLink className={({isActive})=>(isActive?'text-white bg-amber-800':'')} to='/'>Home</NavLink></li>
+          <li><NavLink className={({ isActive }) => (isActive ? 'text-white bg-amber-800' : '')} to='/'>Home</NavLink></li>
+          
       <li>
        <NavLink className={({isActive})=>(isActive?'text-white bg-yellow-300':'')} to='/about'>About</NavLink>
       </li>
