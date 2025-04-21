@@ -35,10 +35,10 @@ const PhoneContainer = ({ phones }) => {
           
             setShowAll(prv => !prv)
           
-          if(showAll) window.scrollTo(0 ,0)
+          if(showAll) window.scrollTo(0 ,400)
         }
 
-        } className='btn btn-praimary  '>            { showAll ?'showless':'showAll'}
+        } className='btn btn-praimary  '>   { showAll ?'showless':'showAll'}
 
         </button>
     </div>

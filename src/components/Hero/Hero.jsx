@@ -11,7 +11,12 @@ const Hero = ({ handleSearch }) => {
         <h1 className='text-5xl font-semibold'>Welcome to our Phone Store</h1>
         <p>Find the latest and greatest phones here !i have no new phone so i am very poor so <br /> you are ready fo r on the curent itme </p>
 
-        <form onSubmit={(e) => handleSearch(e, searchText)}
+        <form onSubmit={(e) => { handleSearch(e, searchText)
+          setSearchText('')
+          
+        }
+
+        }
           className='flex flex-col md:flex-row justify-center items-center p-4' action="">
           <input
             value={searchText}

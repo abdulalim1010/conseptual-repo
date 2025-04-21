@@ -6,7 +6,8 @@ import Error from "../Pages/Error";
 import About from "../Pages/About";
 import Favorites from "../Pages/Favorites";
 import Navbar from "../components/Navbar/Navbar";
-import PhoneDetails from "../Pages/PhoneDetails";
+import PhoneDetails from "../components/PhoneDetails/PhoneDetails";
+
 
 export const router = createBrowserRouter([
  
@@ -19,7 +20,7 @@ export const router = createBrowserRouter([
          path:'/',
         element: <Home />,
     hydrateFallbackElement:<h1>loadding -------</h1>,
-    loader:()=>fetch('phones.json')
+    loader:()=>fetch('../phones.json')
   
       },
       {
@@ -32,8 +33,10 @@ export const router = createBrowserRouter([
     element:<About/>
   },
       {
-    path: "/phones-details",
-    element:<PhoneDetails/>
+    path: "/phones-details/:id",
+        element:<PhoneDetails/>,
+        loader:()=>fetch('../phones.json')
+
   },
       {
     path: "navbar",
