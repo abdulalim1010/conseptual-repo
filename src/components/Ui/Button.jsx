@@ -1,9 +1,8 @@
-import React from 'react';
-
-const Button = ({label}) => {
+const Button = ({ onClick, label }) => {
   return (
-    <button className="btn btn-dash btn-secondary">{ label}</button>
-
+    <button onClick={onClick} className="btn">
+      {label}
+    </button>
   );
 };
 
